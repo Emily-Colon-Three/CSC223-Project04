@@ -1,10 +1,8 @@
 import unittest
+from basic_shape import BasicShape
 
-
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
-
-
-if __name__ == '__main__':
-    unittest.main()
+# Tries to create a BasicShape object, which should raise a TypeError because it is an abstract class.
+class ConstructBasicShape(unittest.TestCase):
+    def test_basic_shape_construction(self):
+        with self.assertRaises(TypeError):
+            self.shape = BasicShape("Name", 0)
