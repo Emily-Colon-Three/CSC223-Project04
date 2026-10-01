@@ -10,7 +10,7 @@ class BasicShape(ABC):
     # Constructor contains only the basic properties of all BasicShape derivatives.
     def __init__(self, name, area):
         self._name = name
-        self._area = self.calc_area()
+        self._area = area
 
     @property
     def name(self) -> str:
