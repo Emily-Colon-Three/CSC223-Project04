@@ -40,11 +40,12 @@ class Circle(BasicShape):
     @radius.setter
     def radius(self, new: float):
         if new <= 0.0:
-            raise ValueError("radius cannot be greater than zero")
+            raise ValueError("radius must be greater than zero")
+
         self._radius = new
         self._area = self.calc_area()
 
     # formula for circle's area used; math module used for math.pi
-    def calc_area(self):
-        area = math.pi * self._radius * self._radius
-        return area
+    def calc_area(self) -> float:
+        _area = math.pi * self._radius * self._radius
+        return _area
