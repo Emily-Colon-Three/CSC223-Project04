@@ -25,7 +25,6 @@ class Rectangle(BasicShape):
             raise ValueError("Length must be greater than 0")
         else:
             self._length = new
-            print("length setter used.")
 
         # An issue needs to be prevented when automatically updating Rectangle area:
         # calc_area() needs both length and width to be initialized first, meaning a try/except block is needed to prevent issues.
@@ -45,7 +44,6 @@ class Rectangle(BasicShape):
             raise ValueError("Width must be greater than 0")
         else:
             self._width = new
-            print("width setter used.")
             self._area = self.calc_area() # Updates area when width changed.
 
     # How Rectangle class defines its area; used whenever dimensions are updated and in initialization.
