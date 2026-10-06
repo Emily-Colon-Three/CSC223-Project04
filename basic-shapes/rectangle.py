@@ -1,5 +1,3 @@
-from encodings import undefined
-
 from basic_shape import BasicShape
 
 class Rectangle(BasicShape):
@@ -23,10 +21,11 @@ class Rectangle(BasicShape):
         return self._length
     @length.setter
     def length(self, new: float):
-        if new <= 0:
+        if new <= 0.0:
             raise ValueError("Length must be greater than 0")
-
-        self._length = new
+        else:
+            self._length = new
+            print("length setter used.")
 
         # An issue needs to be prevented when automatically updating Rectangle area:
         # calc_area() needs both length and width to be initialized first, meaning a try/except block is needed to prevent issues.
@@ -42,13 +41,14 @@ class Rectangle(BasicShape):
         return self._width
     @width.setter
     def width(self, new: float):
-        if new <= 0:
+        if new <= 0.0:
             raise ValueError("Width must be greater than 0")
-
-        self._width = new
-        self._area = self.calc_area() # Updates area when width changed.
+        else:
+            self._width = new
+            print("width setter used.")
+            self._area = self.calc_area() # Updates area when width changed.
 
     # How Rectangle class defines its area; used whenever dimensions are updated and in initialization.
     def calc_area(self) -> float:
-        _area = self._length * self._width
-        return _area
+        self._area = self._length * self._width
+        return self._area

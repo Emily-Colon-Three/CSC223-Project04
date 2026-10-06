@@ -12,6 +12,7 @@ class InvalidRectangle(unittest.TestCase):
     def test_negative_length(self):
         with self.assertRaises(ValueError):
             self.rectangle = Rectangle(-2, 4)
+            print(self.rectangle.length)
 
     def test_negative_width(self):
         with self.assertRaises(ValueError):
